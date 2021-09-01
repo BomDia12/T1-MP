@@ -8,8 +8,8 @@ check:
 	cppcheck --enable=warning .
 
 cpplint:
-	python ~/.local/lib/python3.8/site-packages/cpplint.py testa_velha.cpp
-	python ~/.local/lib/python3.8/site-packages/cpplint.py velha.cpp
+	python ~/.local/lib/python3.9/site-packages/cpplint.py testa_velha.cpp
+	python ~/.local/lib/python3.9/site-packages/cpplint.py velha.cpp
 
 doxygen:
 	doxygen 
@@ -18,7 +18,7 @@ gcov:
 	gcov velha.cpp
 
 valgrind:
-	valgrind --leak-check=full ./testa_velha
+	valgrind --leak-check=full ./testa_velha.exe
 
 cleangcov:
 	rm -rf *.gc*
