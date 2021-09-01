@@ -24,3 +24,19 @@ echo "========================================"
 printf "\n\n"
 
 make valgrind
+
+printf "\n\n"
+echo "========================================"
+echo "=      Conferindo com o cppcheck       ="
+echo "========================================"
+printf "\n\n"
+
+make check
+
+printf "\n\n"
+echo "========================================"
+echo "=      Conferindo com o cobertura      ="
+echo "========================================"
+printf "\n\n"
+
+make gcov
