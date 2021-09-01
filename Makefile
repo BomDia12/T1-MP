@@ -8,8 +8,8 @@ check:
 	cppcheck --enable=warning .
 
 cpplint:
-	python ~/.local/lib/python3.9/site-packages/cpplint.py testa_velha.cpp
 	python ~/.local/lib/python3.9/site-packages/cpplint.py velha.cpp
+	python ~/.local/lib/python3.9/site-packages/cpplint.py testa_velha.cpp
 
 doxygen:
 	doxygen 
