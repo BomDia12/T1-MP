@@ -1,3 +1,5 @@
 *.o
 *.exe
 *.gc*
+latex
+html
