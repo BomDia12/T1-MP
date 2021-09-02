@@ -56,7 +56,7 @@ TEST_CASE("Testa se o X vence", "[single-file]") {
     }
 }
 
-TEST_CASE("Testa se o y vence", "[single-file]") {
+TEST_CASE("Testa se o O vence", "[single-file]") {
     SECTION("Horizontal") {
         int teste2[3][3] = {{ 2, 2, 2 },
                             { 1, 0, 0 },
