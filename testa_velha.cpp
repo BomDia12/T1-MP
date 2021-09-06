@@ -104,7 +104,7 @@ TEST_CASE("Testa se o O vence", "[single-file]") {
     }
 }
 
-TEST_CASE("Testa se retorna 0 se o jogo deu velha", "[single-file]") {
+TEST_CASE("Testa se retorna 0 quando o jogo da velha", "[single-file]") {
     int teste1[3][3] = {{ 1, 1, 2 },
                         { 2, 1, 1 },
                         { 1, 2, 2 }};
@@ -119,4 +119,26 @@ TEST_CASE("Testa se retorna 0 se o jogo deu velha", "[single-file]") {
                         { 2, 1, 1 },
                         { 1, 2, 2 }};
     REQUIRE(VerificaVelha(teste3) == 0);
+}
+
+TEST_CASE("Testa se o jogo ainda está indefinido", "[single-file]") {
+    int teste1[3][3] = {{ 1, 2, 2 },
+                        { 2, 1, 1 },
+                        { 0, 1, 2 }};
+    REQUIRE(VerificaVelha(teste1) == -1);
+
+    int teste2[3][3] = {{ 0, 0, 0 },
+                        { 0, 1, 0 },
+                        { 0, 0, 0 }};
+    REQUIRE(VerificaVelha(teste2) == -1);
+
+    int teste3[3][3] = {{ 0, 0, 0 },
+                        { 0, 1, 0 },
+                        { 0, 0, 2 }};
+    REQUIRE(VerificaVelha(teste3) == -1); 
+
+    int teste4[3][3] = {{ 1, 2, 2 },
+                        { 2, 1, 1 },
+                        { 0, 0, 0 }};
+    REQUIRE(VerificaVelha(teste4) == -1);
 }
