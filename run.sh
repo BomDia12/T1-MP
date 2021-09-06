@@ -35,7 +35,7 @@ make check
 
 printf "\n\n"
 echo "========================================"
-echo "=      Conferindo com o cobertura      ="
+echo "=        Conferindo a cobertura        ="
 echo "========================================"
 printf "\n\n"
 
