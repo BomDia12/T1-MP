@@ -68,17 +68,21 @@ int VerificaVelha(int velha[3][3]) {
             ganhador = 2;
         }
     }
+    // No primeiro bloco, eu não confiro se o outro jogador já ganhou,
+    // uma vez que, por ser o primeiro bloco, nenhum ganhador foi indentificado
 
     // Conferindo a segunda linha
     if (d == e && e == f) {
         if (d == 1) {
-            if (ganhador != 0) {
+            // Se chegar aqui e o ganhador já for o outro jogador,
+            // o jogo é inválido
+            if (ganhador == 2) {
                 return -2;
             }
             ganhador = 1;
         }
         if (d == 2) {
-            if (ganhador != 0) {
+            if (ganhador == 1) {
                 return -2;
             }
             ganhador = 2;
@@ -88,13 +92,13 @@ int VerificaVelha(int velha[3][3]) {
     // Conferindo a terceira linha
     if (g == h && h == i) {
         if (g == 1) {
-            if (ganhador != 0) {
+            if (ganhador == 2) {
                 return -2;
             }
             ganhador = 1;
         }
         if (g == 2) {
-            if (ganhador != 0) {
+            if (ganhador == 1) {
                 return -2;
             }
             ganhador = 2;
@@ -104,13 +108,13 @@ int VerificaVelha(int velha[3][3]) {
     // Conferindo a primeira coluna
     if (a == d && d == g) {
         if (a == 1) {
-            if (ganhador != 0) {
+            if (ganhador == 2) {
                 return -2;
             }
             ganhador = 1;
         }
         if (a == 2) {
-            if (ganhador != 0) {
+            if (ganhador == 1) {
                 return -2;
             }
             ganhador = 2;
@@ -120,13 +124,13 @@ int VerificaVelha(int velha[3][3]) {
     // Conferindo a segunda coluna
     if (b == e && e == h) {
         if (b == 1) {
-            if (ganhador != 0) {
+            if (ganhador == 2) {
                 return -2;
             }
             ganhador = 1;
         }
         if (b == 2) {
-            if (ganhador != 0) {
+            if (ganhador == 1) {
                 return -2;
             }
             ganhador = 2;
@@ -136,13 +140,13 @@ int VerificaVelha(int velha[3][3]) {
     // Conferindo a terceira coluna
     if (c == f && f == i) {
         if (c == 1) {
-            if (ganhador != 0) {
+            if (ganhador == 2) {
                 return -2;
             }
             ganhador = 1;
         }
         if (c == 2) {
-            if (ganhador != 0) {
+            if (ganhador == 1) {
                 return -2;
             }
             ganhador = 2;
@@ -152,13 +156,13 @@ int VerificaVelha(int velha[3][3]) {
     // Conferindo a primeira diagonal
     if (a == e && e == i) {
         if (a == 1) {
-            if (ganhador != 0) {
+            if (ganhador == 2) {
                 return -2;
             }
             ganhador = 1;
         }
         if (a == 2) {
-            if (ganhador != 0) {
+            if (ganhador == 1) {
                 return -2;
             }
             ganhador = 2;
@@ -168,13 +172,13 @@ int VerificaVelha(int velha[3][3]) {
     // Conferindo a segunda coluna
     if (c == e && e == g) {
         if (c == 1) {
-            if (ganhador != 0) {
+            if (ganhador == 2) {
                 return -2;
             }
             ganhador = 1;
         }
         if (c == 2) {
-            if (ganhador != 0) {
+            if (ganhador == 1) {
                 return -2;
             }
             ganhador = 2;
