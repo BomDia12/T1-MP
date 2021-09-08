@@ -26,6 +26,34 @@ int VerificaVelha(int velha[3][3]) {
     int g = velha[2][0];
     int h = velha[2][1];
     int i = velha[2][2];
+    // Declarando contadores
+    int count1 = 0;
+    int count2 = 0;
+    // Declarando variável para ver se os dois "ganharam"
+    int ganhador = 0;
+    // Loop para contar a quantidade de 1s e 2s
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (velha[i][j] == 1) {
+                // Acrescenta o contador se o valor for 1
+                count1++;
+            } else if (velha[i][j] == 2) {
+                // Acrescenta o contador se o valor for 2
+                count2++;
+            } else if (velha[i][j] != 0) {
+                // Se o valor nao for valido, retorna que o jogo e impossivel,
+                // logo, retorna -2
+                return -2;
+            }
+        }
+    }
+
+    // Confere se a quantidade de 1s e 2s é inválida
+    if (count1 > (count2 + 1) || count2 > (count1 + 1)) {
+        // Se existe um excesso de 1s ou 2s, o jogo é impossível,
+        // logo, retorna -2
+        return -2;
+    }
 
     /* Conferindo se alguem ganhou */
 
@@ -33,83 +61,125 @@ int VerificaVelha(int velha[3][3]) {
     if (a == b && b == c) {
         if (a == 1) {
             // Se todos os valores de uma coluna forem iguais a 1, o X venceu
-            return 1;
+            ganhador = 1;
         }
         if (a == 2) {
             // Se todos os valores de uma coluna forem iguais a 2, o O venceu
-            return 2;
+            ganhador = 2;
         }
     }
 
     // Conferindo a segunda linha
     if (d == e && e == f) {
         if (d == 1) {
-            return 1;
+            if (ganhador != 0) {
+                return -2;
+            }
+            ganhador = 1;
         }
         if (d == 2) {
-            return 2;
+            if (ganhador != 0) {
+                return -2;
+            }
+            ganhador = 2;
         }
     }
 
     // Conferindo a terceira linha
     if (g == h && h == i) {
         if (g == 1) {
-            return 1;
+            if (ganhador != 0) {
+                return -2;
+            }
+            ganhador = 1;
         }
         if (g == 2) {
-            return 2;
+            if (ganhador != 0) {
+                return -2;
+            }
+            ganhador = 2;
         }
     }
 
     // Conferindo a primeira coluna
     if (a == d && d == g) {
         if (a == 1) {
-            return 1;
+            if (ganhador != 0) {
+                return -2;
+            }
+            ganhador = 1;
         }
         if (a == 2) {
-            return 2;
+            if (ganhador != 0) {
+                return -2;
+            }
+            ganhador = 2;
         }
     }
 
     // Conferindo a segunda coluna
     if (b == e && e == h) {
         if (b == 1) {
-            return 1;
+            if (ganhador != 0) {
+                return -2;
+            }
+            ganhador = 1;
         }
         if (b == 2) {
-            return 2;
+            if (ganhador != 0) {
+                return -2;
+            }
+            ganhador = 2;
         }
     }
 
     // Conferindo a terceira coluna
     if (c == f && f == i) {
         if (c == 1) {
-            return 1;
+            if (ganhador != 0) {
+                return -2;
+            }
+            ganhador = 1;
         }
         if (c == 2) {
-            return 2;
+            if (ganhador != 0) {
+                return -2;
+            }
+            ganhador = 2;
         }
     }
 
     // Conferindo a primeira diagonal
     if (a == e && e == i) {
         if (a == 1) {
-            return 1;
+            if (ganhador != 0) {
+                return -2;
+            }
+            ganhador = 1;
         }
         if (a == 2) {
-            return 2;
+            if (ganhador != 0) {
+                return -2;
+            }
+            ganhador = 2;
         }
     }
 
     // Conferindo a segunda coluna
     if (c == e && e == g) {
         if (c == 1) {
-            return 1;
+            if (ganhador != 0) {
+                return -2;
+            }
+            ganhador = 1;
         }
         if (c == 2) {
-            return 2;
+            if (ganhador != 0) {
+                return -2;
+            }
+            ganhador = 2;
         }
     }
 
-    return 0; /* Caso a função chegue aqui, o resultado é velha */
+    return ganhador; /* Caso a função chegue aqui, o resultado é velha */
 }
