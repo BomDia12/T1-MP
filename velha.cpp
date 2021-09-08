@@ -185,5 +185,13 @@ int VerificaVelha(int velha[3][3]) {
         }
     }
 
-    return ganhador; /* Caso a função chegue aqui, o resultado é velha */
+    // Se ainda tiver algum campo vazio, e nenhum jogador ganhou,
+    // o jogo consta como incompleto
+    if (count1 + count2 < 9 && ganhador == 0) {
+        return -1;
+    }
+
+    return ganhador;
+    // Retorna a variável que guarda o ganhador do jogo, ou,
+    // se o jogo estiver empatado, empate
 }
