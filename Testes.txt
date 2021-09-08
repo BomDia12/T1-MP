@@ -1,0 +1,19 @@
+Os testes do arquivo foram dividos em 5 casos de teste, um para cada saída
+possível.
+
+Os testes para caso o X ou caso o O ganhem testam todas as possições possíveis
+para caso o O e o X ganhem, logo, passar nesses testes significa que o programa
+consegue indentificar o ganhador em qualquer posição
+
+O teste para se o jogo está indefinido, testa várias configurações, desde poucos
+valores registrados a apenas um local restante. Passar nesse teste mostra que o
+programa consegue indentificar se o jogo já terminou, ou não.
+
+O teste para se o jogo é impossível testa diferentes formas nas quais um jogo pode
+não ser válido, desde mais de um jogador ganhando, até um número inválido como
+entrada, ou mais 1s que 2s e vice-versa. Passar nesse teste quer dizer que o 
+programa consegue diferenciar entradas válidas de entradas inválidas.
+
+O teste para ver se tem empate, confere diferentes configurações para conferir se o 
+programa retorna que deu empate corretamente. Com esse último teste, fica demonstrado
+que o programa satisfaz os requesitos iniciais.

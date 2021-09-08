@@ -12,7 +12,9 @@
  * 
  *  Essa função confere se um jogo da velha é possível, se ele ainda está 
  * incompleto (retorna -1), se o X ganhou (retorna 1), se o O ganhou (retorna 2),
- * se ele deu em velha (retorna 0). Se o jogo for imposível ela retorna -2
+ * se ele deu em velha (retorna 0). Se o jogo for imposível ela retorna -2.
+ * Vale ressaltar que o jogo só resulta em empate caso todos os locais tenham sido
+ * preenchidos, caso contrário, o jogo estará incompleto.
  */
 
 int VerificaVelha(int velha[3][3]) {
